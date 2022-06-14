@@ -2,7 +2,7 @@
 My python scripts !
 
 # sortfile 
-used to sort file that is in a repository indicated by the SORTIDR constant.
+used to sort file that is in a repository indicated by the SORTDIR constant.
 
 ## dependancy
 python > 3.4
