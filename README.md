@@ -1,5 +1,5 @@
 # pyhton
-python scripts created be me !
+My python scripts !
 
 # sortfile 
 used to sort file that is in a repository indicated by the SORTIDR constant.
