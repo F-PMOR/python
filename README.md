@@ -21,9 +21,9 @@ You have to use the pathlib syntaxe.
 ## usage 
 just call the script.
 
-python3 sortfile.py
-or
-chmod sortfile.py
+python3 sortfile.py  
+or  
+chmod sortfile.py  
 ./sortfile.py
 
 
