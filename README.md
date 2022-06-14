@@ -1,7 +1,7 @@
 # pyhton
 python scripts created be me !
 
-# sortfile : 
+# sortfile 
 used to sort file that is in a repository indicated by the SORTIDR constant.
 
 ## dependancy
