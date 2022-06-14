@@ -18,6 +18,8 @@ You have to use the pathlib syntaxe.
  - exemple on windows : SORTDIR = HOMEDIR / "Download" / "test" -> c:\Users\username\Downloads\test
  - exemple on linux : SORTDIR = HOMEDIR / "Download" / "test" -> /home/username/Downloads/test
 
+2. you can change the behavior of the script by adding or replacing the FILETYPE dictionnary. (this one is a french one)
+
 ## usage 
 just call the script.
 
@@ -25,6 +27,7 @@ python3 sortfile.py
 or  
 chmod sortfile.py  
 ./sortfile.py
+
 
 
 
