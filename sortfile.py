@@ -16,6 +16,7 @@ FILETYPE = {
             ".rar" : "archives",
             ".zip" : "archives",
             ".bin" : "bin",
+            ".dll" : "bin",
             ".exe" : "bin",
             ".msi" : "bin",
             ".sql" : "Base_de_donnees",
@@ -69,7 +70,6 @@ DUPLICATEDIR.mkdir(exist_ok=True)
 # search for file inside the directory that as to be sorted
 for file in [f for f in SORTDIR.glob("*") if f.is_file()]:
     suffix=str(file.suffix.lower())
-    print(suffix)
     destdir=FILETYPE.get(suffix, file.parent)
     pathdestdir = SORTDIR.joinpath(destdir)
     pathdestdir.mkdir(exist_ok=True)
@@ -78,6 +78,3 @@ for file in [f for f in SORTDIR.glob("*") if f.is_file()]:
     except FileExistsError as err:
         print(f"⚠ : File : \n    -> '{file.name}' ever found in the directory : '{SORTDIR / destdir}'\n    -> Moved to : {DUPLICATEDIR} !\n    -> ☠  Check for duplication, Next time, the file will be deleted !")
         duplicate(file)
-
-
-    
