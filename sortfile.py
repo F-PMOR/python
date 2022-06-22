@@ -10,33 +10,47 @@ from pathlib import Path
 HOMEDIR = Path.home()
 SORTDIR = HOMEDIR / "Downloads" # / "test"
 DUPLICATEDIR = SORTDIR.joinpath("duplicate")
-FILETYPE = {".jpg" : "images",
-            ".jpeg" : "images",
-            ".png" : "images",
-            ".tif" : "images",
-            ".txt" : "documents",
-            ".pdf" : "documents",
+FILETYPE = {
+            ".7z" : "archives",
+            ".gz" : "archives",
+            ".rar" : "archives",
+            ".zip" : "archives",
+            ".bin" : "bin",
+            ".exe" : "bin",
+            ".msi" : "bin",
+            ".sql" : "Base_de_donnees",
+            ".py" : "dev",
+            ".vsix" : "dev",
+            ".azw" : "documents", # fichiers kindle
+            ".csv" : "documents",
             ".doc" : "documents",
             ".docx" : "documents",
+            ".json" : "documents",
+            ".pdf" : "documents",
+            ".ppt" : "documents",
+            ".pptx" : "documents",
+            ".pub" : "documents",
+            ".txt" : "documents",
+            ".vcf" : "documents",
             ".xls" : "documents",
             ".xlsx" : "documents",
             ".xlsx" : "documents",
-            ".ppt" : "documents",
-            ".pptx" : "documents",
-            ".csv" : "documents",
-            ".json" : "documents",
+            ".jpeg" : "images",
+            ".png" : "images",
+            ".tif" : "images",
+            ".jpg" : "images",
             ".rpm" : "linux",
             ".repo" : "linux",
             ".deb" : "linux",
-            ".gz" : "archives",
-            ".zip" : "archives",
-            ".exe" : "bin",
             ".mp3" : "music",
             ".m4a" : "music",
             ".wav" : "music",
             ".ogg" : "music",
             ".wma" : "music",
             ".mid" : "music",
+            ".kdbx" : "securite",
+            ".mp4" : "video",
+            
             }
 
 
@@ -46,7 +60,6 @@ def duplicate(fichier):
     except FileExistsError as err:
         print(f"☠  File :\n   -> '{file.name}' found in the directory : '{DUPLICATEDIR}'\n   -> File DELETED ! ☠")
         fichier.unlink()
-   
 
 #########
 # main ##
@@ -55,7 +68,9 @@ def duplicate(fichier):
 DUPLICATEDIR.mkdir(exist_ok=True)
 # search for file inside the directory that as to be sorted
 for file in [f for f in SORTDIR.glob("*") if f.is_file()]:
-    destdir=FILETYPE.get(file.suffix, file.parent)
+    suffix=str(file.suffix.lower())
+    print(suffix)
+    destdir=FILETYPE.get(suffix, file.parent)
     pathdestdir = SORTDIR.joinpath(destdir)
     pathdestdir.mkdir(exist_ok=True)
     try: 
@@ -63,7 +78,6 @@ for file in [f for f in SORTDIR.glob("*") if f.is_file()]:
     except FileExistsError as err:
         print(f"⚠ : File : \n    -> '{file.name}' ever found in the directory : '{SORTDIR / destdir}'\n    -> Moved to : {DUPLICATEDIR} !\n    -> ☠  Check for duplication, Next time, the file will be deleted !")
         duplicate(file)
-
 
 
     
