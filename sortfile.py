@@ -20,6 +20,7 @@ FILETYPE = {".jpg" : "images",
             ".docx" : "documents",
             ".xls" : "documents",
             ".xlsx" : "documents",
+            ".xlsx" : "documents",
             ".ppt" : "documents",
             ".pptx" : "documents",
             ".csv" : "documents",
@@ -29,7 +30,13 @@ FILETYPE = {".jpg" : "images",
             ".deb" : "linux",
             ".gz" : "archives",
             ".zip" : "archives",
-            ".exe" : "bin"
+            ".exe" : "bin",
+            ".mp3" : "music",
+            ".m4a" : "music",
+            ".wav" : "music",
+            ".ogg" : "music",
+            ".wma" : "music",
+            ".mid" : "music",
             }
 
 
